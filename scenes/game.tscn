@@ -1,0 +1,228 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/spinner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/black_ready.png" type="Texture" id=2]
+[ext_resource path="res://assets/yellow_ready.png" type="Texture" id=3]
+[ext_resource path="res://assets/red_ready.png" type="Texture" id=4]
+[ext_resource path="res://scripts/speedbar.gd" type="Script" id=5]
+[ext_resource path="res://assets/font100.tres" type="DynamicFont" id=6]
+[ext_resource path="res://scripts/game.gd" type="Script" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Spinner1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 360, 1000 )
+rotation = -3.14159
+
+[node name="Spinner2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 360, 280 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+margin_top = 630.0
+margin_right = 720.0
+margin_bottom = 650.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnBlack" type="TextureButton" parent="Control/Player1"]
+margin_left = 620.0
+margin_top = 650.0
+margin_right = 720.0
+margin_bottom = 750.0
+texture_normal = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnRed" type="TextureButton" parent="Control/Player1"]
+margin_left = 620.0
+margin_top = 735.0
+margin_right = 720.0
+margin_bottom = 835.0
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnYellow" type="TextureButton" parent="Control/Player1"]
+margin_left = 620.0
+margin_top = 820.0
+margin_right = 720.0
+margin_bottom = 920.0
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="ProgressBar" parent="Control/Player1"]
+anchor_top = -0.025
+anchor_bottom = -0.025
+margin_left = 80.0
+margin_top = 641.0
+margin_right = 710.0
+margin_bottom = 721.0
+rect_rotation = 90.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+value = 50.0
+percent_visible = false
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Control/Player1"]
+margin_top = 644.0
+margin_right = 720.0
+margin_bottom = 764.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Msg" type="Label" parent="Control/Player1"]
+margin_top = 740.0
+margin_right = 1200.0
+margin_bottom = 860.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BtnBlack" type="TextureButton" parent="Control/Player2"]
+margin_left = 100.0
+margin_top = 630.0
+margin_right = 200.0
+margin_bottom = 730.0
+rect_rotation = 180.0
+texture_normal = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnRed" type="TextureButton" parent="Control/Player2"]
+margin_left = 100.0
+margin_top = 545.0
+margin_right = 200.0
+margin_bottom = 645.0
+rect_rotation = 180.0
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnYellow" type="TextureButton" parent="Control/Player2"]
+margin_left = 100.0
+margin_top = 460.0
+margin_right = 200.0
+margin_bottom = 560.0
+rect_rotation = 180.0
+texture_normal = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="ProgressBar" parent="Control/Player2"]
+anchor_top = -0.025
+anchor_bottom = -0.025
+margin_left = 640.0
+margin_top = 631.0
+margin_right = 1270.0
+margin_bottom = 711.0
+rect_rotation = -90.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+value = 50.0
+percent_visible = false
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="Control/Player2"]
+margin_left = 720.0
+margin_top = 636.0
+margin_right = 1440.0
+margin_bottom = 756.0
+rect_rotation = 180.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Msg" type="Label" parent="Control/Player2"]
+margin_left = 720.0
+margin_top = 540.0
+margin_right = 1920.0
+margin_bottom = 660.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.478431, 0.478431, 0.478431, 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BetweenRound" type="Timer" parent="."]
+[connection signal="block" from="." to="Spinner1" method="_on_Game_block"]
+[connection signal="block" from="." to="Spinner2" method="_on_Game_block"]
+[connection signal="unblock" from="." to="Spinner1" method="_on_Game_unblock"]
+[connection signal="unblock" from="." to="Spinner2" method="_on_Game_unblock"]
+[connection signal="limit" from="Spinner1" to="." method="_on_Spinner1_limit"]
+[connection signal="speed" from="Spinner1" to="Control/Player1/Speed" method="_on_Spinner_speed"]
+[connection signal="zero" from="Spinner1" to="." method="_on_Spinner1_zero"]
+[connection signal="limit" from="Spinner2" to="." method="_on_Spinner2_limit"]
+[connection signal="speed" from="Spinner2" to="Control/Player2/Speed" method="_on_Spinner_speed"]
+[connection signal="zero" from="Spinner2" to="." method="_on_Spinner2_zero"]
+[connection signal="pressed" from="Control/Player1/BtnBlack" to="Spinner1" method="_on_BtnBlack_pressed"]
+[connection signal="pressed" from="Control/Player1/BtnRed" to="Spinner1" method="_on_BtnRed_pressed"]
+[connection signal="pressed" from="Control/Player1/BtnYellow" to="Spinner1" method="_on_BtnYellow_pressed"]
+[connection signal="pressed" from="Control/Player2/BtnBlack" to="Spinner2" method="_on_BtnBlack_pressed"]
+[connection signal="pressed" from="Control/Player2/BtnRed" to="Spinner2" method="_on_BtnRed_pressed"]
+[connection signal="pressed" from="Control/Player2/BtnYellow" to="Spinner2" method="_on_BtnYellow_pressed"]
+[connection signal="timeout" from="BetweenRound" to="." method="_on_BetweenRound_timeout"]

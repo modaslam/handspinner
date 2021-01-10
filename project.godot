@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Hand Spinner"
-run/main_scene="res://scenes/spinner.tscn"
+run/main_scene="res://scenes/game.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -35,4 +35,5 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+environment/default_clear_color=Color( 1, 0.996078, 0.996078, 1 )
 environment/default_environment="res://default_env.tres"
